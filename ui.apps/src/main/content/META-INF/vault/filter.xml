@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/xwalk/clientlibs"/>
+    <filter root="/apps/xwalk/components"/>
+    <filter root="/apps/xwalk/i18n"/>
+</workspaceFilter>
