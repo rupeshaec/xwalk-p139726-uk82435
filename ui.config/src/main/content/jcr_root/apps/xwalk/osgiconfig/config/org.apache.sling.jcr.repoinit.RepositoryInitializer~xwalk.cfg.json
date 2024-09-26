@@ -1,7 +1,0 @@
-{
-    "scripts": [
-        "create path (sling:OrderedFolder) /content/dam/xwalk",
-        "create path (nt:unstructured) /content/dam/xwalk/jcr:content",
-        "set properties on /content/dam/xwalk/jcr:content\n  set cq:conf{String} to /conf/xwalk\n  set jcr:title{String} to \"xwalk\"\nend"
-    ]
-}
