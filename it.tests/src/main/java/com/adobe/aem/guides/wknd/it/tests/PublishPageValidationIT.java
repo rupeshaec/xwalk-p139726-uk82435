@@ -81,7 +81,6 @@ public class PublishPageValidationIT {
 
 
     @Test
-    @Ignore
     public void validateHomepage() throws ClientException, IOException, URISyntaxException {
         String path = HOMEPAGE;
         verifyPage(adminPublish, path);
