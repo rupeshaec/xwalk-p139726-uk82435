@@ -21,6 +21,7 @@ import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
+import org.slf4j.LoggerFactory;
 
 import com.adobe.cq.testing.client.CQClient;
 import com.adobe.cq.testing.junit.assertion.CQAssert;
@@ -36,6 +37,7 @@ import com.adobe.cq.testing.junit.rules.Page;
  * href="https://github.com/adobe/aem-testing-clients">AEM Testing Clients</a>.
  */
 public class CreatePageIT {
+	private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(CreatePageIT.class);
 
     private static final long TIMEOUT = MINUTES.toMillis(3);
 
@@ -82,6 +84,7 @@ public class CreatePageIT {
         // layer, and the timeout from hanging forever in case an error occurs
         // and a page can't be created in time.
 
+    	LOG.error("Executing the Create page test");
         CQAssert.assertCQPageExistsWithTimeout(adminAuthor, root.getPath(), TIMEOUT, 500);
     }
 
