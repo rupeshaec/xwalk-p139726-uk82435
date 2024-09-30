@@ -97,5 +97,10 @@ public class GetPageIT {
     public void testProjectsAuthor() throws ClientException {
         adminAuthor.doGet("/projects.html", 200);
     }
+    
+//    @Test
+//    public void testProjectsSites_ErrorPage() throws ClientException {
+//    	adminPublish.doGet("/content/wknd/us/en/errors.html", 200);
+//    }
 
 }
