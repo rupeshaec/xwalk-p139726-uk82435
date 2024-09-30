@@ -15,17 +15,7 @@
  */
 package com.adobe.aem.guides.wknd.it.tests;
 
-import com.adobe.cq.testing.client.CQClient;
-import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.WebClientOptions;
-import com.gargoylesoftware.htmlunit.html.DomNode;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.sling.testing.clients.ClientException;
-import org.apache.sling.testing.clients.SlingClientConfig;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Node;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.net.URI;
@@ -36,7 +26,18 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static org.junit.Assert.fail;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.sling.testing.clients.ClientException;
+import org.apache.sling.testing.clients.SlingClientConfig;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Node;
+
+import com.adobe.cq.testing.client.CQClient;
+import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.WebClientOptions;
+import com.gargoylesoftware.htmlunit.html.DomNode;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 /**
  * AEM client that maintains a WebClient instance from HTMLUnit framework

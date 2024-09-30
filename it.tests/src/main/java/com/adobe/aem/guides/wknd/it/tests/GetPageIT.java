@@ -15,11 +15,15 @@
  */
 package com.adobe.aem.guides.wknd.it.tests;
 
+import org.apache.sling.testing.clients.ClientException;
+import org.junit.BeforeClass;
+import org.junit.ClassRule;
+import org.junit.Rule;
+import org.junit.Test;
+
 import com.adobe.cq.testing.client.CQClient;
 import com.adobe.cq.testing.junit.rules.CQAuthorPublishClassRule;
 import com.adobe.cq.testing.junit.rules.CQRule;
-import org.apache.sling.testing.clients.ClientException;
-import org.junit.*;
 
 
 /**

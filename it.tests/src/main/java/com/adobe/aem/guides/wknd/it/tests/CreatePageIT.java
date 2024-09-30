@@ -15,17 +15,18 @@
  */
 package com.adobe.aem.guides.wknd.it.tests;
 
-import com.adobe.cq.testing.client.CQClient;
-import com.adobe.cq.testing.junit.assertion.CQAssert;
-import com.adobe.cq.testing.junit.rules.CQAuthorClassRule;
-import com.adobe.cq.testing.junit.rules.CQRule;
-import com.adobe.cq.testing.junit.rules.Page;
+import static java.util.concurrent.TimeUnit.MINUTES;
+
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 
-import static java.util.concurrent.TimeUnit.MINUTES;
+import com.adobe.cq.testing.client.CQClient;
+import com.adobe.cq.testing.junit.assertion.CQAssert;
+import com.adobe.cq.testing.junit.rules.CQAuthorClassRule;
+import com.adobe.cq.testing.junit.rules.CQRule;
+import com.adobe.cq.testing.junit.rules.Page;
 
 /**
  * Test that a page can be successfully created on the author instance. This
