@@ -16,21 +16,21 @@
 
 package com.adobe.cq.cloud.testing.it.smoke.rules;
 
-import static com.adobe.cq.cloud.testing.it.smoke.exception.ServiceException.SUFFIX;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import com.adobe.cq.cloud.testing.it.smoke.exception.ServiceException;
+import com.adobe.cq.testing.client.CQClient;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.apache.sling.testing.clients.util.poller.Polling;
 import org.apache.sling.testing.clients.ClientException;
 import org.apache.sling.testing.clients.SlingClient;
-import org.apache.sling.testing.clients.util.poller.Polling;
 import org.apache.sling.testing.junit.rules.instance.Instance;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
@@ -38,8 +38,7 @@ import org.junit.runners.model.Statement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.adobe.cq.cloud.testing.it.smoke.exception.ServiceException;
-import com.adobe.cq.testing.client.CQClient;
+import static com.adobe.cq.cloud.testing.it.smoke.exception.ServiceException.SUFFIX;
 
 /**
  * Junit test rule to check service up
