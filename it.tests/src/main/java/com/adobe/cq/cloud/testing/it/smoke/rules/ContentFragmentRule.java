@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.adobe.cq.cloud.testing.it.cf.smoke.rules;
+package com.adobe.cq.cloud.testing.it.smoke.rules;
 
-import com.adobe.cq.testing.client.CQClient;
+import java.util.UUID;
+
 import org.apache.sling.testing.clients.ClientException;
 import org.apache.sling.testing.clients.SlingHttpResponse;
 import org.apache.sling.testing.clients.exceptions.TestingSetupException;
@@ -24,7 +25,7 @@ import org.apache.sling.testing.clients.util.FormEntityBuilder;
 import org.apache.sling.testing.junit.rules.instance.Instance;
 import org.junit.rules.ExternalResource;
 
-import java.util.UUID;
+import com.adobe.cq.testing.client.CQClient;
 
 /**
  * A series of Content Fragment helper methods encapsulated in an External Resource Rule.

@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package com.adobe.cq.cloud.testing.it.cf.smoke.rules;
+package com.adobe.cq.cloud.testing.it.smoke.rules;
 
-import com.adobe.cq.testing.client.CQClient;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeoutException;
+
 import org.apache.sling.testing.clients.util.poller.Polling;
 import org.apache.sling.testing.junit.rules.instance.Instance;
 import org.junit.rules.ExternalResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeoutException;
+import com.adobe.cq.testing.client.CQClient;
 
 public class CleanUpRule extends ExternalResource {
 

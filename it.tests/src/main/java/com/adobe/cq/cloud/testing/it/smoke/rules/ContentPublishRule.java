@@ -16,6 +16,18 @@
 
 package com.adobe.cq.cloud.testing.it.smoke.rules;
 
+import static com.adobe.cq.cloud.testing.it.smoke.exception.PublishException.getPageErrorCode;
+import static com.adobe.cq.cloud.testing.it.smoke.exception.ReplicationException.ACTION_NOT_REPLICATED;
+import static com.adobe.cq.cloud.testing.it.smoke.exception.ReplicationException.QUEUE_BLOCKED;
+import static com.adobe.cq.cloud.testing.it.smoke.exception.ReplicationException.REPLICATION_NOT_AVAILABLE;
+import static com.adobe.cq.cloud.testing.it.smoke.replication.ReplicationClient.checkPackageInQueue;
+import static org.apache.http.HttpStatus.SC_FORBIDDEN;
+import static org.apache.http.HttpStatus.SC_MOVED_PERMANENTLY;
+import static org.apache.http.HttpStatus.SC_MOVED_TEMPORARILY;
+import static org.apache.http.HttpStatus.SC_NOT_FOUND;
+import static org.apache.http.HttpStatus.SC_OK;
+import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collections;
@@ -24,15 +36,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 
-import com.adobe.cq.cloud.testing.it.smoke.exception.PublishException;
-import com.adobe.cq.cloud.testing.it.smoke.exception.ReplicationException;
-import com.adobe.cq.cloud.testing.it.smoke.exception.SmokeTestException;
-import com.adobe.cq.cloud.testing.it.smoke.replication.ReplicationClient;
-import com.adobe.cq.cloud.testing.it.smoke.replication.data.Agent;
-import com.adobe.cq.cloud.testing.it.smoke.replication.data.Agents;
-import com.adobe.cq.cloud.testing.it.smoke.replication.data.ReplicationResponse;
-import com.adobe.cq.testing.client.CQClient;
-import com.adobe.cq.testing.junit.rules.Page;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -47,17 +50,14 @@ import org.junit.rules.ExternalResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.adobe.cq.cloud.testing.it.smoke.exception.PublishException.getPageErrorCode;
-import static com.adobe.cq.cloud.testing.it.smoke.exception.ReplicationException.ACTION_NOT_REPLICATED;
-import static com.adobe.cq.cloud.testing.it.smoke.exception.ReplicationException.QUEUE_BLOCKED;
-import static com.adobe.cq.cloud.testing.it.smoke.exception.ReplicationException.REPLICATION_NOT_AVAILABLE;
-import static com.adobe.cq.cloud.testing.it.smoke.replication.ReplicationClient.checkPackageInQueue;
-import static org.apache.http.HttpStatus.SC_FORBIDDEN;
-import static org.apache.http.HttpStatus.SC_MOVED_PERMANENTLY;
-import static org.apache.http.HttpStatus.SC_MOVED_TEMPORARILY;
-import static org.apache.http.HttpStatus.SC_NOT_FOUND;
-import static org.apache.http.HttpStatus.SC_OK;
-import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
+import com.adobe.cq.cloud.testing.it.smoke.exception.PublishException;
+import com.adobe.cq.cloud.testing.it.smoke.exception.SmokeTestException;
+import com.adobe.cq.cloud.testing.it.smoke.replication.ReplicationClient;
+import com.adobe.cq.cloud.testing.it.smoke.replication.data.Agent;
+import com.adobe.cq.cloud.testing.it.smoke.replication.data.Agents;
+import com.adobe.cq.cloud.testing.it.smoke.replication.data.ReplicationResponse;
+import com.adobe.cq.testing.client.CQClient;
+import com.adobe.cq.testing.junit.rules.Page;
 
 /**
  * Junit test rule to check content distribution functionality

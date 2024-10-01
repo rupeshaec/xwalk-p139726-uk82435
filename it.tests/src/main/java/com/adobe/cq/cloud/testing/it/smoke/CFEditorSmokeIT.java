@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 
-package com.adobe.cq.cloud.testing.it.cf.smoke;
+package com.adobe.cq.cloud.testing.it.smoke;
 
-import com.adobe.cq.cloud.testing.it.cf.smoke.rules.CleanUpRule;
-import com.adobe.cq.cloud.testing.it.cf.smoke.rules.ContentFragmentRule;
-import com.adobe.cq.cloud.testing.it.cf.smoke.rules.InstallPackageRule;
-import com.adobe.cq.testing.client.CQClient;
-import com.adobe.cq.testing.junit.rules.CQAuthorClassRule;
-import com.adobe.cq.testing.junit.rules.CQRule;
+import java.util.concurrent.TimeoutException;
+
 import org.apache.sling.testing.clients.ClientException;
 import org.apache.sling.testing.clients.util.poller.Polling;
 import org.junit.AfterClass;
@@ -33,7 +29,12 @@ import org.junit.rules.TestRule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.TimeoutException;
+import com.adobe.cq.cloud.testing.it.smoke.rules.CleanUpRule;
+import com.adobe.cq.cloud.testing.it.smoke.rules.ContentFragmentRule;
+import com.adobe.cq.cloud.testing.it.smoke.rules.InstallPackageRule;
+import com.adobe.cq.testing.client.CQClient;
+import com.adobe.cq.testing.junit.rules.CQAuthorClassRule;
+import com.adobe.cq.testing.junit.rules.CQRule;
 
 /**
  * Series of smoke tests that check if a Content Fragment Editor and Content Fragment Model Editor work

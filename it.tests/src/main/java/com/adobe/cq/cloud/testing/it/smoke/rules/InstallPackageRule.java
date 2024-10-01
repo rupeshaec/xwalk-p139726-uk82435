@@ -13,9 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.adobe.cq.cloud.testing.it.cf.smoke.rules;
+package com.adobe.cq.cloud.testing.it.smoke.rules;
 
-import com.adobe.cq.testing.client.PackageManagerClient;
+import static java.lang.Integer.MAX_VALUE;
+import static org.apache.http.HttpStatus.SC_OK;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.management.ManagementFactory;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.jar.Attributes;
+import java.util.jar.JarEntry;
+import java.util.jar.JarOutputStream;
+import java.util.jar.Manifest;
+import java.util.stream.Stream;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.sling.testing.clients.ClientException;
 import org.apache.sling.testing.clients.SlingClient;
@@ -30,23 +54,7 @@ import org.junit.runners.model.Statement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
-import java.lang.management.ManagementFactory;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.file.*;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.jar.Attributes;
-import java.util.jar.JarEntry;
-import java.util.jar.JarOutputStream;
-import java.util.jar.Manifest;
-import java.util.stream.Stream;
-
-import static java.lang.Integer.MAX_VALUE;
-import static org.apache.http.HttpStatus.SC_OK;
+import com.adobe.cq.testing.client.PackageManagerClient;
 
 /**
  * Install the test content package from resources.
