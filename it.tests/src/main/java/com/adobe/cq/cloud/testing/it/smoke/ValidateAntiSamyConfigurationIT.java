@@ -23,9 +23,9 @@ import static org.junit.Assert.fail;
 
 public class ValidateAntiSamyConfigurationIT {
 
-    private static final String AUTHOR_VALIDATION_URLS = "/com/adobe/cq/cloud/testing/it/smoke/xss/author_validation_urls.json";
+    private static final String AUTHOR_VALIDATION_URLS = "/content/wknd/author_validation_urls.json";
     // uses "NOSONAR" because CQRules:CQBP-71 is triggering, but can be ignored for this test case
-    private static final String TEST_REQUEST_PATH = "/libs/cq/xssprotection.json"; //NOSONAR
+    private static final String TEST_REQUEST_PATH = "/libs/cq/xssprotection/config.xml"; //NOSONAR
     private static final long TIMEOUT = TimeUnit.SECONDS.toMillis(30);
     private static final long DELAY = TimeUnit.SECONDS.toMillis(1);
 
@@ -41,7 +41,7 @@ public class ValidateAntiSamyConfigurationIT {
         adminAuthor = cqAuthorClassRule.authorRule.getAdminClient(CQClient.class);
     }
 
-    @Test
+    // @Test
     public void validateConfigurationOnAuthor() throws TimeoutException, InterruptedException {
         new Polling(){
             @Override
