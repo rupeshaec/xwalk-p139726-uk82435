@@ -37,6 +37,10 @@ import java.util.Arrays;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+/**
+ * I could not understood the use of this test case.
+ *
+ */
 public class GetTogglesIT {
 
     @ClassRule
@@ -81,7 +85,7 @@ public class GetTogglesIT {
      * @throws IOException if an error occurred
      * @throws SAXException if an error occurred
      */
-    @Ignore
+    @Test
     public void testAboutPageVersionFormatWithToggleQualifier() throws ClientException, ParserConfigurationException, IOException, SAXException {
         SlingHttpResponse response = adminAuthor.doGet("mnt/overlay/granite/ui/content/shell/about.html", 200);
         final String regex = "^Adobe Experience Manager [\\d]{4}.[\\d]{1,2}.[\\d]+.[\\d]{8}T[\\d]{6}Z-[\\d]{6}(-[\\w]+)?$";
