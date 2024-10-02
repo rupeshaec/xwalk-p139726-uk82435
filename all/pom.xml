@@ -90,6 +90,11 @@
                             <type>zip</type>
                             <target>/apps/wknd-vendor-packages/content/install</target>
                         </embedded>
+                        <embedded>
+                            <groupId>be.orbinson.aem</groupId>
+                            <artifactId>aem-groovy-console-all</artifactId>
+                            <target>/apps/vendor-packages/content/install</target>
+                        </embedded>
                     </embeddeds>
                 </configuration>
             </plugin>

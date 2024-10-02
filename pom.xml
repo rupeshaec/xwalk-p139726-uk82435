@@ -827,6 +827,12 @@ Bundle-DocURL:
                 <version>1.0.1</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>be.orbinson.aem</groupId>
+                <artifactId>aem-groovy-console-all</artifactId>
+                <version>19.0.3</version>
+                <type>zip</type>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

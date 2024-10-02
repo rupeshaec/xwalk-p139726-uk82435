@@ -1,0 +1,8 @@
+{
+    "allowedGroups":[
+      "administrators"
+    ],
+    "allowedScheduledJobsGroups":[
+      "administrators"
+    ]
+  }

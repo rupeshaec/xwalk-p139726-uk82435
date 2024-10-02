@@ -105,3 +105,11 @@ With Adobe Stock, you have access to more than 140 million high-quality, royalty
 
 * This project was generated using the [AEM Project Archetype](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/developing/archetype/overview.html).
 * This project relies on [AEM Core Components](https://experienceleague.adobe.com/docs/experience-manager-core-components/using/introduction.html).
+
+
+### For rde use following commands to deploy code
+aio logout
+aio login
+aio aem:rde:setup
+mvn clean install
+aio aem:rde:install '/Users/rupeshk/Documents/projects/functional-test/xwalk-p139726-uk82435/all/target/aem-guides-wknd.all-3.2.1-SNAPSHOT.zip'
