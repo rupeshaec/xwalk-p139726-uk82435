@@ -1,3 +1,10 @@
+# Git repo information
+Adobe git repo https://git.cloudmanager.adobe.com/ags1832/xwalk-p139726-uk82435/
+Git repo (personal account: rupeshaec) 
+    ssh: git@github.com:rupeshaec/xwalk-p139726-uk82435.git
+    https: https://github.com/rupeshaec/xwalk-p139726-uk82435
+
+
 # AEM WKND Sites Project
 
 ## Adobe Experience Manager compatibility
